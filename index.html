@@ -11,7 +11,15 @@
     <h1>Hello, Vue :)</h1>
 
     <div id="app">
-      <h2>{{ title }} - {{ author }} - {{ age }}</h2>
+      <div v-if="showBooks">
+        <h2>{{ title }} - {{ author }} - {{ age }}</h2>
+      </div>
+
+      <button @click="toggleShowBooks"><span>Hide Books</span></button>
+
+      <button @click="age++">Increase age</button>
+      <button @click="age--">Decrease age</button>
+      <div @click="changeTitle">Click me !</div>
     </div>
 
     <script src="app.js"></script>
