@@ -1,6 +1,6 @@
 # Advent Of Vue 2022
 
-## If you didn't get here from an email, read this section! Skip it otherwise.
+## If you didn't get here from an email, read this section! Skip it otherwise
 
 [Advent Of Vue](https://adventofvue.com) is a series of 24 Vue coding challenges that are sent out every day from December 1 to December 24 via [a dedicated newsletter](https://www.getrevue.co/profile/AdventOfVue). If you'd like to receive more of these puzzles in the future, go ahead and sign up!
 
@@ -16,7 +16,7 @@ If the search term gets reset back to an empty string, clear the search suggesti
 
 ## Recording of an example solution
 
-https://youtu.be/avf8OyNDJfo
+<https://youtu.be/avf8OyNDJfo>
 
 ## Author
 

@@ -1,5 +1,27 @@
-<script setup>
+<script setup lang="ts">
 import { ref, watch } from 'vue'
+
+const productApi = 'https://dummyjson.com/products/search'
+
+type Product = {
+  brand: string
+  price: number
+  title: string
+}
+
+async function fetchApi(searchTerm: string) {
+  const res = await window.fetch(`${productApi}/?q=${searchTerm}`)
+  const json = await res.json()
+  console.log(json)
+  return json.products as Product[]
+}
+
+async function getProducts() {
+  const products = await fetchApi('phone')
+  console.log(products)
+}
+
+getProducts()
 
 const searchTerm = ref('')
 
