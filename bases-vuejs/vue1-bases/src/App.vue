@@ -9,8 +9,8 @@ const sun = ref(true)
 <template>
   <main>
     <h1>{{ message }}</h1>
-    <h2 v-if="sun">Jour</h2>
-    <h2 v-else>Nuit</h2>
+    <h2 v-show="sun">Jour</h2>
+    <h2 v-show="!sun">Nuit</h2>
     <button @click="sun = !sun">Toggle</button>
   </main>
 </template>
