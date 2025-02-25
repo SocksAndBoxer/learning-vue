@@ -1,33 +1,32 @@
 <script setup>
 import { ref } from "vue"
 
-const message = ref("Modifier le nombre")
-const count = ref(0)
+const message = ref("Tuto Vue.js")
+const inputMessage = ref("Texte exemple")
 
-function incrementCount() {
-  count.value += 1
+function submitInputMessage() {
+  console.log(inputMessage.value);
 }
 
-function resetCount() {
-  count.value = 0
-}
 </script>
 
 <template>
   <main>
     <h1>{{ message }}</h1>
-    <h2 :id="'id_'+count" :class="count < 10 ? 'blueviolet' : 'red'">Nombre = {{ count }}</h2>
-    <button @click="incrementCount">Incrémenter la valeur</button>
-    <button :style="count <= 0 && 'display:none;'" @click="resetCount">Réinitialiser la valeur</button>
+    <label class="input-message" for="toto">
+      Saisir un texte
+      <input v-model="inputMessage" type="text" name="toto">
+    </label>
+    <button @click="submitInputMessage">Valier</button>
+    <p>{{ inputMessage }}</p>
   </main>
 </template>
 
 <style scoped>
-  .blueviolet {
-    color: blueviolet
-  }
+.input-message {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
 
-  .red {
-    color: red;
-  }
 </style>
