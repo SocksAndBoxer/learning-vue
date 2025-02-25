@@ -1,17 +1,30 @@
 <script setup>
 import { ref } from "vue"
 
+let id = 0
 const message = ref("Tuto Vue.js")
-const sun = ref(true)
-
+const items = ref([
+  { 
+    text: "truc",
+    id: id++
+  },
+  { 
+    text: "machin",
+    id: id++
+  },
+  { 
+    text: "bidule",
+    id: id++
+  }
+])
 </script>
 
 <template>
   <main>
     <h1>{{ message }}</h1>
-    <h2 v-show="sun">Jour</h2>
-    <h2 v-show="!sun">Nuit</h2>
-    <button @click="sun = !sun">Toggle</button>
+    <ul>
+      <li v-for="item in items" :key="item.id">{{ item.text }}</li>
+    </ul>
   </main>
 </template>
 
